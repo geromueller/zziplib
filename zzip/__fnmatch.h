@@ -19,6 +19,9 @@
 # endif
 #else
 # define _zzip_FNM_CASEFOLD 0
+#define FNM_PATHNAME    (1 << 0) /* No wildcard can ever match `/'.  */
+#define FNM_NOESCAPE    (1 << 1) /* Backslashes don't quote special chars.  */
+#define FNM_PERIOD      (1 << 2) /* Leading `.' is matched only explicitly.  */
 /* if your system does not have fnmatch, we fall back to strcmp: */
 static int _zzip_fnmatch(char* pattern, char* string, int flags)
 { 
